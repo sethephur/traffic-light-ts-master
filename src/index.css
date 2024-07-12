@@ -28,7 +28,7 @@ main {
 }
 
 .traffic-light-box {
-  background-color: #5a5a5a;
+  background-color: #282828;
   height: 100%;
   width: 100%;
   display: flex;
@@ -46,15 +46,16 @@ main {
 .traffic-light {
   height: 500px;
   width: 200px;
-  background-color: #f5d81b;
+  background-image: radial-gradient(circle at center, #dcc052, #bf8e07);
   border: 5px solid black;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.traffic-light > .circle {
+.traffic-light>.circle {
   height: 120px;
   width: 120px;
   border-radius: 100%;
@@ -67,18 +68,18 @@ main {
   margin-top: 20px;
 }
 
-.black {
-  background-color: black;
-}
-
 .red {
-  background-color: red;
-}
-
-.green {
-  background-color: #2ad111;
+  background: radial-gradient(circle at center, #ff0000, #800000);
 }
 
 .yellow {
-  background-color: yellow;
+  background: radial-gradient(circle at center, #ffff00, #808000);
+}
+
+.green {
+  background: radial-gradient(circle at center, #00ff00, #008000);
+}
+
+.black {
+  background: radial-gradient(circle at center, #000000, #333333);
 }
