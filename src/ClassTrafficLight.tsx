@@ -12,8 +12,9 @@ export class ClassTrafficLight extends Component {
   };
 
   handleNextState = () => {
-    const isLast = this.state.lightState === this.lightColors.length - 1;
-    this.setState({ lightState: isLast ? 0 : this.state.lightState + 1 });
+    const isRed = this.state.lightState === 0;
+    this.setState({ lightState: isRed ? this.lightColors.length - 1 : this.state.lightState - 1 });
+    // this.setState({ lightState: isRed ? 0 : this.state.lightState - 1 });
   };
 
   render() {
@@ -21,9 +22,9 @@ export class ClassTrafficLight extends Component {
       <div className='traffic-light-box'>
         <h2>Class Traffic Light</h2>
         <div className='traffic-light'>
-          <div className={`circle ${this.getLightClass(0)}`}></div>
-          <div className={`circle ${this.getLightClass(1)}`}></div>
-          <div className={`circle ${this.getLightClass(2)}`}></div>
+          {this.lightColors.map((_color: string, index: number) => (
+            <div className={`circle ${this.getLightClass(index)}`}></div>
+          ))}
         </div>
         <button className='next-state-button' onClick={this.handleNextState}>
           Next State
